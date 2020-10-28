@@ -1,25 +1,21 @@
 // serve up HTML files here
+const router = require("express").Router();
 var path = require("path");
 
-module.exports = function(app) {
-
     // Each of the below routes just handles the HTML page that the user gets sent to.
-  
-    // index route loads view.html
-    app.get("/", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/index.html"));
+    router.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
     });
-  
-    // add route loads the add.html page,
-    // where users can enter new characters to the db
-    app.get("/exercise", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/exercise.html"));
+
+    // where users can enter new exercise to the db
+    router.get("/exercise", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/exercise.html"));
     });
-  
-    // all route loads the all.html page,
-    // where all characters in the db are displayed
-    app.get("/stats", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/stats.html"));
+
+    // where all stats in the db are displayed
+    router.get("/stats", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/stats.html"));
     });
-  
-  };
+
+
+module.exports = router;
