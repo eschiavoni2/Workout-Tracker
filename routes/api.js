@@ -26,6 +26,14 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
+router.put("/api/workouts/:id", (req, res) => {
+    Workout.findByIdAndUpdate(
+        {
+            
+        }
+    )
+}
+
 
 
 module.exports = router;
