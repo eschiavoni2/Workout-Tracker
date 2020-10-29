@@ -36,21 +36,11 @@ router.get("/api/workouts", (req, res) => {
       });
   });
 
-  router.get("/api/workouts/range", ({ query }, res) => {
-    Workout.find({ day: { $gte: query.start, $lte: query.end } })
-      .then(dbWorkouts => {
-        res.json(dbWorkouts);
-      })
-      .catch(err => {
-        res.json(err);
-      });
-  });
-
 router.put("/api/workouts/:id", ({body, params}, res) => {
     Workout.findByIdAndUpdate(
         params.id,
         {
-            $push: {exercise: body}
+            $push: {exercises: body}
         }
     )
     .then(dbWorkouts => {
