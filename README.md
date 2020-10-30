@@ -13,7 +13,7 @@ nosql workout tracker
 A consumer will reach their fitness goals more quickly when they track their workout progress.
 
 ## GIF
-![Workout Gif]("workout.gif")
+![Workout Gif](workout.gif)
 
 ## Created by:
 Erika Zibelnik
